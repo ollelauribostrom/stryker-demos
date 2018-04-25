@@ -1,0 +1,41 @@
+{
+  "name": "stryker-es6-example",
+  "version": "1.0.0",
+  "description": "An example",
+  "main": "dist/helloworld.js",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.13.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.5.1",
+    "jest": "^22.4.3",
+    "opn-cli": "^3.1.0",
+    "stryker": "^0.22.4",
+    "stryker-api": "^0.16.1",
+    "stryker-babel-transpiler": "^0.4.2",
+    "stryker-html-reporter": "^0.13.3",
+    "stryker-javascript-mutator": "^0.6.3",
+    "stryker-jest-runner": "^0.6.0"
+  },
+  "scripts": {
+    "start": "babel src -D -d dist --watch",
+    "build": "babel src -D -d dist",
+    "prepare": "npm run build",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "coveralls": "jest --coverage && cat ./test/coverage/lcov.info | coveralls",
+    "mutate": "./node_modules/.bin/stryker run && ./node_modules/.bin/opn tests/mutation/html/index.html",
+    "lint": "eslint src test --ignore-pattern test/coverage*"
+  },
+  "author": "Olle Lauri Boström <ollebostr@gmail.com> (https://github.com/ollelauribostrom)",
+  "license": "MIT",
+  "jest": {
+    "coverageDirectory": "<rootDir>/tests/coverage"
+  }
+}
