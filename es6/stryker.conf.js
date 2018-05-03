@@ -4,7 +4,7 @@ module.exports = (config) => {
     mutator: 'javascript',
     babelrcFile: '.babelrc',
     transpilers: ['babel'],
-    reporter: ['html', 'clear-text', 'progress'],
+    reporter: ['html', 'clear-text', 'progress', 'dashboard'],
     htmlReporter: {
       baseDir: 'tests/mutation/html',
     },

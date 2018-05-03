@@ -1,0 +1,14 @@
+sudo: false
+language: node_js
+node_js:
+- '8'
+branches:
+  only:
+  - master
+before_install:
+- cd react-ts
+- npm update
+install:
+- npm install
+script:
+- npm test
